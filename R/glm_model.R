@@ -6,6 +6,7 @@
 #' @return A list object of a glm model object and the Psuedo R^{2} value.
 #' @examples
 #' glm_model(input_model, input_formula)
+#'
 glm_model <- function(inputs, formula){
 	model <- glm(
 		formula = paste0(formula),
