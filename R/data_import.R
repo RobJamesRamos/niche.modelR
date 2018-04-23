@@ -1,14 +1,12 @@
-# 1) Imports the raster and point layers.
-# 2) Creates a raster stack
-# 3) Checks the point data for inconsistency problems and removes blanks
-#
-# Args
-# rasters            A string of raster file names
-# points             The name of a .csv file
-#
-# Output
-# predictors               A raster stack
-# plots                    A data.table
+#' Imports the raster and point layers.
+#' Creates a raster stack
+#' Checks the point data for inconsistency problems and removes blanks
+#' @param rasters A string of raster file names.
+#' @param points The name of a .csv file.
+#' @return A list of objecgs predictors (a raster stack) and plots (a data.table).
+#' @examples
+#' data_import(input_rasters,input_points)
+
 if(!require(data.table)){
 	install.packages("data.table",repos = "https://cloud.r-project.org")
 	library(data.table)}
