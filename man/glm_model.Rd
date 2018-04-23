@@ -19,4 +19,5 @@ Takes the plots data.table and runs a GLM model.
 }
 \examples{
 glm_model(input_model, input_formula)
+
 }

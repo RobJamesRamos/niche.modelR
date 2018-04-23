@@ -1,4 +1,4 @@
-#' Takes the GLM model and raster stack and creates an output raster
+#' Takes the GLM model and raster stack and creates an output raster.
 #'
 #' @param predictors A raster stack.
 #' @param input_model A GLM model object.
