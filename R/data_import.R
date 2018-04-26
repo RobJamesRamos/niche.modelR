@@ -14,7 +14,7 @@ data_import <- function(predictors, points){
 			paste0(points)))
 	xy <- plots[, .(p.lon, p.lat)]
 	dt <- plots[, !c("V1","p.lat","p.lon"), with=FALSE]
-	spdt <- sp::SpatialPointsDataFrame()
+	spdt <- sp::SpatialPointsDataFrame(
 		coords = xy,
 		data = dt,
 		proj4string = CRS("+proj=longlat +datum=WGS84"))
