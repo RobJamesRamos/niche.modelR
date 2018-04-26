@@ -12,7 +12,7 @@ data_import <- function(predictors, data){
 	plots <- na.omit(
 		data.table::fread(
 			paste0(data)))
-	xy <- plots[, .(p.lon, p.lat)]
+	xy <- plots[, .("p.lon", "p.lat")]
 	dt <- plots[, !c("V1","p.lat","p.lon"), with=FALSE]
 	spdt <- sp::SpatialPointsDataFrame(
 		coords = xy,
