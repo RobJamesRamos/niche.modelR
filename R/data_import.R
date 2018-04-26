@@ -8,19 +8,18 @@
 #' @examples
 #' data_import(input_rasters,input_points)
 
-data_import <- function(predictors, points){
+data_import <- function(predictors, data){
 	plots <- na.omit(
 		data.table::fread(
-			paste0(points)))
+			paste0(data)))
 	xy <- plots[, .(p.lon, p.lat)]
 	dt <- plots[, !c("V1","p.lat","p.lon"), with=FALSE]
 	spdt <- sp::SpatialPointsDataFrame(
 		coords = xy,
 		data = dt,
 		proj4string = CRS("+proj=longlat +datum=WGS84"))
-	plots <- data.table::as.data.table(
-		raster::extract(
-			predictors,
+	plots <- as.data.frame(
+		raster::extract(predictors,
 			spdt,
 			method='simple',
 			sp=TRUE))
