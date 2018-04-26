@@ -4,6 +4,7 @@
 #' @param rasters A string of raster file names.
 #' @param points The name of a .csv file.
 #' @return A list of objecgs predictors (a raster stack) and plots (a data.table).
+#' @export
 #' @examples
 #' data_import(input_rasters,input_points)
 

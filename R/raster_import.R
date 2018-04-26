@@ -1,7 +1,7 @@
 #' Imports the raster and creates a raster stack
-#'
 #' @param rasters A string of raster file names
 #' @return Objedt predictors - A raster stack
+#' @export
 #' @examples
 #' rasters <- c(
 #' 'data/PRISM/PRISM_ppt_30yr_normal_800mM2_annual_asc/ppt_30yr_n.asc',
