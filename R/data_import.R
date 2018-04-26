@@ -18,7 +18,7 @@ data_import <- function(predictors, data){
 		coords = xy,
 		data = dt,
 		proj4string = CRS("+proj=longlat +datum=WGS84"))
-	plots <- as.data.frame(
+	plots <- data.table::as.data.table(
 		raster::extract(predictors,
 			spdt,
 			method='simple',
