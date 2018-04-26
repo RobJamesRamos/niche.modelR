@@ -7,11 +7,20 @@
 #' @examples
 #' data_import(input_rasters,input_points)
 
-# if(!require(data.table)){
-# 	install.packages("data.table",repos = "https://cloud.r-project.org")
-# 	library(data.table)}
-data_import <- function(rasters, points){
-	predictors <- stack(paste0(rasters))
-	plots <- na.omit(fread(paste0(points)))
-list(predictors,plots)
-}
+data_import <- function(predictors, points){
+	plots <- na.omit(
+		data.table::fread(
+			paste0(points)))
+	xy <- plots[, .(p.lon, p.lat)]
+	dt <- plots[, !c("V1","p.lat","p.lon"), with=FALSE]
+	spdt <- sp::SpatialPointsDataFrame(
+		coords = xy,
+		data = dt,
+		proj4string = CRS("+proj=longlat +datum=WGS84"))
+	plots <- data.table::as.data.table(
+		extract(
+			predictors,
+			spdt,
+			method='simple',
+			sp=TRUE))
+	plots}

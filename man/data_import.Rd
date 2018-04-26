@@ -6,12 +6,12 @@
 Creates a raster stack.
 Checks the point data for inconsistency problems and removes blanks.}
 \usage{
-data_import(rasters, points)
+data_import(predictors, points)
 }
 \arguments{
-\item{rasters}{A string of raster file names.}
-
 \item{points}{The name of a .csv file.}
+
+\item{rasters}{A string of raster file names.}
 }
 \value{
 A list of objecgs predictors (a raster stack) and plots (a data.table).

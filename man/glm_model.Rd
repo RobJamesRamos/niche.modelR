@@ -12,7 +12,7 @@ glm_model(inputs, formula)
 \item{data}{A data.table object.}
 }
 \value{
-A list object of a glm model object and the Psuedo R^{2} value.
+A  glm model object.
 }
 \description{
 Takes the plots data.table and runs a GLM model.
