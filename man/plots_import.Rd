@@ -4,7 +4,7 @@
 \alias{plots_import}
 \title{Imports the raster and point layers. Creates a raster stack. Checks the point data for inconsistency problems and removes blanks.}
 \usage{
-plots_import(predictors, plots_data)
+plots_import(predictors, plots, extents_raster)
 }
 \arguments{
 \item{rasters}{A string of raster file names.}

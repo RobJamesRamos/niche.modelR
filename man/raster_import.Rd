@@ -4,7 +4,7 @@
 \alias{raster_import}
 \title{Imports the raster and creates a raster stack}
 \usage{
-raster_import(rasters)
+raster_import(rasters, extents_raster)
 }
 \arguments{
 \item{rasters}{A string of raster file names}

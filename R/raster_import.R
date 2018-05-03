@@ -10,12 +10,15 @@
 #' )
 #' raster_import(rasters)
 
-raster_import <- function(rasters){
+raster_import <- function(rasters,extents_raster){
 	n <- stringr::str_replace(
 		string = basename((input_rasters)),
 		pattern = '\\.[^.]*$',
 		replacement = '')
 	predictors <- raster::stack(paste0(rasters))
 	names(predictors) <- n
+	predictors <- raster::crop(
+		predictors,
+		extents_raster)
 	predictors
 }
