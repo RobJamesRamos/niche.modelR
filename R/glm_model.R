@@ -13,3 +13,5 @@ glm_model <- function(inputs, formula){
 		family=poisson)
 	model
 }
+
+# TDL## your parameter names don't match your argument names

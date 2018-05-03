@@ -8,3 +8,5 @@
 
 predict_model <- function(input_predictors, input_model){
 }
+
+# parameter names are inconsistant and examples need data

@@ -35,3 +35,5 @@ plots_import <- function(predictors, plots, extents_raster){
 			sp=TRUE))
 	plots
 }
+
+# TDL## examples need data import step or use default data
