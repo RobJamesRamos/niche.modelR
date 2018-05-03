@@ -7,16 +7,27 @@
 #' @examples
 #' plots_import(input_rasters,input_points)
 
-plots_import <- function(predictors, plots_data){
-	plots <- na.omit(
-		data.table::fread(
-			paste0(plots_data)))
+plots_import <- function(predictors, plots, extents_raster){
 	xy <- plots[, .(p.lon, p.lat)]
 	dt <- plots[, !c("V1","p.lat","p.lon"), with=FALSE]
 	spdt <- sp::SpatialPointsDataFrame(
 		coords = xy,
 		data = dt,
-		proj4string = sp::CRS("+proj=longlat +datum=WGS84"))
+		proj4string = sp::CRS(
+			"+proj=longlat +datum=WGS84"))
+	spdt <- raster::crop(
+		spdt,
+		extents_raster)
+	plots_raster <- raster::rasterize(
+		x = spdt,
+		y = predictors,
+		field = 'treecount',
+		fun=sum,
+		background = 0,
+		na.rm = FALSE)
+	spdt <- rasterToPoints(plots_raster,
+		fun=NULL,
+		spatial=TRUE)
 	plots <- as.data.table(
 		raster::extract(predictors,
 			spdt,
