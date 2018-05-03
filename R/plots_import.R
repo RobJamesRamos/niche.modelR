@@ -23,11 +23,10 @@ plots_import <- function(predictors, plots, extents_raster){
 		y = predictors,
 		field = 'treecount',
 		fun=sum,
-		background = 0,
-		na.rm = FALSE)
+		background = 0)
 	spdt <- rasterToPoints(plots_raster,
-		fun=NULL,
-		spatial=TRUE)
+				fun=NULL,
+				spatial=TRUE)
 	plots <- as.data.table(
 		raster::extract(predictors,
 			spdt,
