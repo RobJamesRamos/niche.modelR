@@ -9,3 +9,4 @@ psuedo_r2 <- function(model){
 	r2 <- 1-model$deviance/model$null.deviance
 	r2
 }
+# TDL## vague description.  I wouldn't be able to remember the details of this function from the description.
