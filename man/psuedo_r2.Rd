@@ -2,7 +2,8 @@
 % Please edit documentation in R/psuedo_r2.R
 \name{psuedo_r2}
 \alias{psuedo_r2}
-\title{Calculates a psuedo R2 value.}
+\title{Calculates a psuedo R2 value from the output of a glm.
+The psuedo R2 is equal to 1 - (deviance/null deviance)}
 \usage{
 psuedo_r2(model)
 }
@@ -13,7 +14,8 @@ psuedo_r2(model)
 Object r2 The Pseudo R^2 value
 }
 \description{
-Calculates a psuedo R2 value.
+Calculates a psuedo R2 value from the output of a glm.
+The psuedo R2 is equal to 1 - (deviance/null deviance)
 }
 \examples{
 psuedo_r2(glm_model)

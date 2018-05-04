@@ -1,11 +1,13 @@
 #' Imports the raster and point layers. Creates a raster stack. Checks the point data for inconsistency problems and removes blanks.
 #' @param rasters A string of raster file names.
 #' @param points The name of a .csv file.
+#' @param extents_raster A raster of the desired study extent.
 #' @return A list of objecgs predictors (a raster stack) and plots (a data.table).
 #' @export
 #' @import data.table
+#' @import bit64
 #' @examples
-#' plots_import(input_rasters,input_points)
+#' plots_import(input_rasters,input_points, extents_raster)
 
 plots_import <- function(predictors, plots, extents_raster){
 	xy <- plots[, .(p.lon, p.lat)]

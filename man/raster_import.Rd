@@ -8,6 +8,8 @@ raster_import(rasters, extents_raster)
 }
 \arguments{
 \item{rasters}{A string of raster file names}
+
+\item{extents_raster}{A raster of the desired study extent.}
 }
 \value{
 Objedt predictors - A raster stack

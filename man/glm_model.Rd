@@ -7,9 +7,9 @@
 glm_model(inputs, formula)
 }
 \arguments{
-\item{inputs}{A string of dependent and independant variables}
+\item{inputs}{A data.table object.}
 
-\item{data}{A data.table object.}
+\item{formula}{A string of dependent and independant variables}
 }
 \value{
 A  glm model object.

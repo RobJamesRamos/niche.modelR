@@ -1,6 +1,6 @@
 #' Takes the plots data.table and runs a GLM model.
-#' @param data A data.table object.
-#' @param inputs A string of dependent and independant variables
+#' @param inputs A data.table object.
+#' @param formula A string of dependent and independant variables
 #' @return A  glm model object.
 #' @export
 #' @examples
@@ -8,7 +8,7 @@
 #'
 glm_model <- function(inputs, formula){
 	model <- glm(
-		formula = paste0(formula),
+		formula = eval(formula),
 		data=inputs,
 		family=poisson)
 	model

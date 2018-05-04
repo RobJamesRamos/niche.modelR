@@ -1,4 +1,5 @@
-#' Calculates a psuedo R2 value.
+#' Calculates a psuedo R2 value from the output of a glm.
+#' The psuedo R2 is equal to 1 - (deviance/null deviance)
 #' @param model A glm model object
 #' @return Object r2 The Pseudo R^2 value
 #' @export

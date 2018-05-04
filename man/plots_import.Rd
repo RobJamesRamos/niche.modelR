@@ -7,6 +7,8 @@
 plots_import(predictors, plots, extents_raster)
 }
 \arguments{
+\item{extents_raster}{A raster of the desired study extent.}
+
 \item{rasters}{A string of raster file names.}
 
 \item{points}{The name of a .csv file.}
@@ -18,5 +20,5 @@ A list of objecgs predictors (a raster stack) and plots (a data.table).
 Imports the raster and point layers. Creates a raster stack. Checks the point data for inconsistency problems and removes blanks.
 }
 \examples{
-plots_import(input_rasters,input_points)
+plots_import(input_rasters,input_points, extents_raster)
 }

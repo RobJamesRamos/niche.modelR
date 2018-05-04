@@ -13,4 +13,5 @@ Imports:
 	data.table,
 	sp,
 	raster,
-	stringr
+	stringr,
+	bit64

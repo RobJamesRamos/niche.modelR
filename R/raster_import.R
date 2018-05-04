@@ -1,5 +1,6 @@
 #' Imports the raster and creates a raster stack
 #' @param rasters A string of raster file names
+#' @param extents_raster A raster of the desired study extent.
 #' @return Objedt predictors - A raster stack
 #' @export
 #' @examples
@@ -12,7 +13,7 @@
 
 raster_import <- function(rasters,extents_raster){
 	n <- stringr::str_replace(
-		string = basename((input_rasters)),
+		string = basename((rasters)),
 		pattern = '\\.[^.]*$',
 		replacement = '')
 	predictors <- raster::stack(paste0(rasters))
